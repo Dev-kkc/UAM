@@ -1,1 +1,5 @@
 #requirements here
+streamlit
+pandas
+openpyxl
+numpy

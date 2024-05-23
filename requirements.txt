@@ -1,5 +1,4 @@
-#requirements here
-streamlit
 pandas
+streamlit
 openpyxl
 numpy

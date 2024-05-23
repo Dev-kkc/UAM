@@ -22,3 +22,8 @@ def append_files_to_excel(files):
     combined_df = pd.concat(dataframes, ignore_index=True)
     
     return combined_df
+
+def split_dataframe(df, chunk_size):
+    """Split a DataFrame into chunks of a specified size."""
+    chunks = [df[i:i + chunk_size] for i in range(0, df.shape[0], chunk_size)]
+    return chunks

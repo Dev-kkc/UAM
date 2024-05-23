@@ -3,7 +3,6 @@ import os
 import streamlit as st
 from DATA_CONSOLIDATION.utils_consolidation import *
 
-
 def data_consolidation_app():
     # Streamlit UI
     st.title("Excel File Merger and Joiner")
@@ -31,13 +30,13 @@ def data_consolidation_app():
             st.write("Resultant table after left join:")
             st.dataframe(result_df.head())  # Display the resultant dataframe
             
-            output_excel = 'result_output.xlsx'
-            result_df.to_excel(output_excel, index=False)
+            # Directly export the DataFrame to a CSV file
+            output_csv = 'result_output.csv'
+            result_df.to_csv(output_csv, index=False)
             
-            # Provide a download link
-            with open(output_excel, 'rb') as f:
-                st.download_button('Download Resultant Excel File', f, file_name=output_excel)
-        
+            # Provide a download link for the CSV file
+            with open(output_csv, 'rb') as f:
+                st.download_button('Download Resultant CSV File', f, file_name=output_csv)
 
-
-
+if __name__ == "__main__":
+    data_consolidation_app()

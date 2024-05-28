@@ -25,6 +25,7 @@ def data_cleaning_app():
     if st.button('Apply Mapping'):
         # Apply the mapping to the DataFrame
         df = apply_mapping(result_df, active_categories, inactive_categories, pending_categories)
+        st.session_state["cleaned_df"] = df
 
         # Show updated DataFrame
         st.write("Updated DataFrame:")

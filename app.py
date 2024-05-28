@@ -1,6 +1,7 @@
 import streamlit as st
-from Data_cleaning.app_cleaning import * 
-from DATA_CONSOLIDATION.consolidation_app import * 
+from Data_cleaning.app_cleaning import data_cleaning_app
+from DATA_CONSOLIDATION.consolidation_app import data_consolidation_app
+from data_visualization.dataviz_app import data_visualization_app
 
 # Custom CSS to change the sidebar style
 st.markdown(
@@ -38,8 +39,8 @@ st.title("Multipage Excel Tool")
 st.sidebar.title("Navigation")
 
 # Navigation options (modify based on your app names)
-page_names = ["Data Upload", "Categorize Status"]
-page_functions = [data_consolidation_app, data_cleaning_app]
+page_names = ["Data Upload", "Categorize Status", "Visualize the data"]
+page_functions = [data_consolidation_app, data_cleaning_app, data_visualization_app]
 
 selected_page = st.sidebar.radio("Select a page", page_names)
 
